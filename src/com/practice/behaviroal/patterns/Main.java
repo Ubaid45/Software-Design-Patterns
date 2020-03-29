@@ -8,6 +8,10 @@ import com.practice.behaviroal.patterns.state.BrushTool;
 import com.practice.behaviroal.patterns.state.Canvas;
 import com.practice.behaviroal.patterns.state.EraserTool;
 import com.practice.behaviroal.patterns.state.SelectionTool;
+import com.practice.behaviroal.patterns.strategy.BlackAndWhiteFilter;
+import com.practice.behaviroal.patterns.strategy.ImageStorage;
+import com.practice.behaviroal.patterns.strategy.JpegCompressor;
+import com.practice.behaviroal.patterns.strategy.PngCompressor;
 
 public class Main {
 
@@ -57,6 +61,13 @@ public class Main {
             System.out.println(url);
             iterator.next();
         }
+
+        //endregion
+
+        //region Strategy Pattern
+        var imageStorage = new ImageStorage();
+        imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
+        imageStorage.store("b", new PngCompressor(), new BlackAndWhiteFilter());
 
         //endregion
     }
