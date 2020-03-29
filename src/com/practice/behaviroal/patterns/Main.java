@@ -1,5 +1,7 @@
 package com.practice.behaviroal.patterns;
 
+import com.practice.behaviroal.patterns.iterator.BrowseHistory;
+import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
 import com.practice.behaviroal.patterns.memento.History;
 import com.practice.behaviroal.patterns.state.BrushTool;
@@ -40,6 +42,21 @@ public class Main {
         canvas.setCurrentTool(new EraserTool());
         canvas.mouseDown();
         canvas.mouseUp();
+
+        //endregion
+
+        //region Iterator Pattern
+        var browseHistory = new BrowseHistory();
+        browseHistory.push("a");
+        browseHistory.push("b");
+        browseHistory.push("c");
+
+        Iterator iterator = browseHistory.createIterator();
+        while (iterator.hasNext()){
+            var url = iterator.current();
+            System.out.println(url);
+            iterator.next();
+        }
 
         //endregion
     }
