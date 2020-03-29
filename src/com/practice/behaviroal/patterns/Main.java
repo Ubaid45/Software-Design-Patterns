@@ -4,6 +4,9 @@ import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
 import com.practice.behaviroal.patterns.memento.History;
+import com.practice.behaviroal.patterns.observer.Chart;
+import com.practice.behaviroal.patterns.observer.DataSource;
+import com.practice.behaviroal.patterns.observer.SpreadSheet;
 import com.practice.behaviroal.patterns.state.BrushTool;
 import com.practice.behaviroal.patterns.state.Canvas;
 import com.practice.behaviroal.patterns.state.EraserTool;
@@ -74,6 +77,20 @@ public class Main {
         //region Template Pattern
         var task = new TransferMoneyTask();
         task.execute();
+
+        //endregion
+
+        //region Observer Pattern
+        var dataSource = new DataSource();
+        var sheet1 = new SpreadSheet(dataSource);
+        var sheet2 = new SpreadSheet(dataSource);
+        var chart = new Chart(dataSource);
+
+        dataSource.addObserver(sheet1);
+        dataSource.addObserver(sheet2);
+        dataSource.addObserver(chart);
+
+        dataSource.setValue(1);
 
         //endregion
     }
