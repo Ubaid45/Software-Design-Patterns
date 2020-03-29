@@ -12,6 +12,7 @@ import com.practice.behaviroal.patterns.strategy.BlackAndWhiteFilter;
 import com.practice.behaviroal.patterns.strategy.ImageStorage;
 import com.practice.behaviroal.patterns.strategy.JpegCompressor;
 import com.practice.behaviroal.patterns.strategy.PngCompressor;
+import com.practice.behaviroal.patterns.template.TransferMoneyTask;
 
 public class Main {
 
@@ -29,7 +30,6 @@ public class Main {
         editor.setContent("c");
         editor.restore(history.pop());
         editor.restore(history.pop());
-
         System.out.println(editor.getContent());
         //endregion
 
@@ -68,6 +68,12 @@ public class Main {
         var imageStorage = new ImageStorage();
         imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
         imageStorage.store("b", new PngCompressor(), new BlackAndWhiteFilter());
+
+        //endregion
+
+        //region Template Pattern
+        var task = new TransferMoneyTask();
+        task.execute();
 
         //endregion
     }
