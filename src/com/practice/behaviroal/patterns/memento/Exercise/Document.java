@@ -30,11 +30,13 @@ public class Document {
     }
 
     public DocumentState createState(){
-        return new DocumentState(content);
+        return new DocumentState(content, fontName, fontSize);
     }
 
     public void restoreState(DocumentState state){
         content = state.getContent();
+        fontName = state.getFontName();
+        fontSize= state.getFontSize();
     }
     @Override
     public String toString() {

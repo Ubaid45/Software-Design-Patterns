@@ -42,16 +42,24 @@ public class Main {
         var documentProcessorHistory = new DocumentProcessorHistory();
         var document = new Document();
 
-        document.setContent("Doc 1");
+        document.setContent("Hello");
+        document.setFontName("Arial");
+        document.setFontSize(12);
+        documentProcessorHistory.push(document.createState());
+        document.setContent("Hello2");
+        document.setFontName("Roman");
+        document.setFontSize(10);
+        documentProcessorHistory.push(document.createState());
+        document.setFontSize(13);
         documentProcessorHistory.push(document.createState());
 
-        document.setContent("Doc 2");
-        documentProcessorHistory.push(document.createState());
 
-        document.setContent("Doc 3");
         document.restoreState(documentProcessorHistory.pop());
+        System.out.println(document);
         document.restoreState(documentProcessorHistory.pop());
-        System.out.println(document.getContent());
+        System.out.println(document);
+        document.restoreState(documentProcessorHistory.pop());
+        System.out.println(document);
         //endregion
         //endregion
 

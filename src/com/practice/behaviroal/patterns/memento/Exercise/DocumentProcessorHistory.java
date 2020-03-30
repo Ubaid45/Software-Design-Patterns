@@ -1,19 +1,18 @@
 package com.practice.behaviroal.patterns.memento.Exercise;
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Deque;
 import java.util.List;
 
 public class DocumentProcessorHistory {
-    private ArrayList<DocumentState> state = new ArrayList<>();
+    private Deque<DocumentState> mementos = new ArrayDeque<>();
 
-    public void push(DocumentState data){
-        state.add(data);
+    public void push(DocumentState memento) {
+        mementos.push(memento);
     }
 
-    public DocumentState pop(){
-        var lastElement = state.size()-1;
-        var lastState = state.get(lastElement);
-        state.remove(lastState);
-        return lastState;
+    public DocumentState pop() {
+        return mementos.pop();
     }
 }
