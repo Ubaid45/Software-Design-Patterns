@@ -13,6 +13,10 @@ import com.practice.behaviroal.patterns.observer.SpreadSheet;
 import com.practice.behaviroal.patterns.state.BrushTool;
 import com.practice.behaviroal.patterns.state.Canvas;
 import com.practice.behaviroal.patterns.state.EraserTool;
+import com.practice.behaviroal.patterns.state.Exercise.Bicycle;
+import com.practice.behaviroal.patterns.state.Exercise.Context;
+import com.practice.behaviroal.patterns.state.Exercise.Driving;
+import com.practice.behaviroal.patterns.state.Exercise.Walking;
 import com.practice.behaviroal.patterns.state.SelectionTool;
 import com.practice.behaviroal.patterns.strategy.BlackAndWhiteFilter;
 import com.practice.behaviroal.patterns.strategy.ImageStorage;
@@ -23,7 +27,9 @@ import com.practice.behaviroal.patterns.template.TransferMoneyTask;
 public class Main {
 
     public static void main(String[] args) {
+
         //region Memento Pattern
+        System.out.println("-------------- Memento Pattern Started --------------");
         var editor = new Editor();
         var history = new History();
 
@@ -39,6 +45,7 @@ public class Main {
         System.out.println(editor.getContent());
 
         //region Exercise Memento Pattern
+        System.out.println("-------------- Memento Pattern (Exercise) Started --------------");
         var documentProcessorHistory = new DocumentProcessorHistory();
         var document = new Document();
 
@@ -64,6 +71,7 @@ public class Main {
         //endregion
 
         //region State Pattern
+        System.out.println("-------------- State Pattern Started --------------");
         var canvas = new Canvas();
         canvas.setCurrentTool(new SelectionTool());
         canvas.mouseDown();
@@ -77,9 +85,25 @@ public class Main {
         canvas.mouseDown();
         canvas.mouseUp();
 
+        //region State (Exercise) Pattern
+        System.out.println("-------------- State Pattern (Exercise) Started --------------");
+        var context = new Context();
+        context.setTravelType(new Driving());
+        context.CalculateETA();
+        context.CalculateDirection();
+
+        context.setTravelType(new Bicycle());
+        context.CalculateDirection();
+        context.CalculateETA();
+
+        context.setTravelType(new Walking());
+        context.CalculateETA();
+        context.CalculateDirection();
+        //endregion
         //endregion
 
         //region Iterator Pattern
+        System.out.println("-------------- Iterator Pattern Started --------------");
         var browseHistory = new BrowseHistory();
         browseHistory.push("a");
         browseHistory.push("b");
@@ -95,6 +119,7 @@ public class Main {
         //endregion
 
         //region Strategy Pattern
+        System.out.println("-------------- Strategy Pattern Started --------------");
         var imageStorage = new ImageStorage();
         imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
         imageStorage.store("b", new PngCompressor(), new BlackAndWhiteFilter());
@@ -102,12 +127,14 @@ public class Main {
         //endregion
 
         //region Template Pattern
+        System.out.println("-------------- Template Pattern Started --------------");
         var task = new TransferMoneyTask();
         task.execute();
 
         //endregion
 
         //region Observer Pattern
+        System.out.println("-------------- Observer Pattern Started --------------");
         var dataSource = new DataSource();
         var sheet1 = new SpreadSheet(dataSource);
         var sheet2 = new SpreadSheet(dataSource);
