@@ -3,6 +3,9 @@ package com.practice.behaviroal.patterns;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
+import com.practice.behaviroal.patterns.memento.Exercise.Document;
+import com.practice.behaviroal.patterns.memento.Exercise.DocumentProcessorHistory;
+import com.practice.behaviroal.patterns.memento.Exercise.DocumentState;
 import com.practice.behaviroal.patterns.memento.History;
 import com.practice.behaviroal.patterns.observer.Chart;
 import com.practice.behaviroal.patterns.observer.DataSource;
@@ -34,6 +37,22 @@ public class Main {
         editor.restore(history.pop());
         editor.restore(history.pop());
         System.out.println(editor.getContent());
+
+        //region Exercise Memento Pattern
+        var documentProcessorHistory = new DocumentProcessorHistory();
+        var document = new Document();
+
+        document.setContent("Doc 1");
+        documentProcessorHistory.push(document.createState());
+
+        document.setContent("Doc 2");
+        documentProcessorHistory.push(document.createState());
+
+        document.setContent("Doc 3");
+        document.restoreState(documentProcessorHistory.pop());
+        document.restoreState(documentProcessorHistory.pop());
+        System.out.println(document.getContent());
+        //endregion
         //endregion
 
         //region State Pattern
