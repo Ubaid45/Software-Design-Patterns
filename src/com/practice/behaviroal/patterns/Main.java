@@ -1,5 +1,7 @@
 package com.practice.behaviroal.patterns;
 
+import com.practice.behaviroal.patterns.chainOfResponsibility.*;
+import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
@@ -18,15 +20,18 @@ import com.practice.behaviroal.patterns.state.Exercise.Context;
 import com.practice.behaviroal.patterns.state.Exercise.Driving;
 import com.practice.behaviroal.patterns.state.Exercise.Walking;
 import com.practice.behaviroal.patterns.state.SelectionTool;
-import com.practice.behaviroal.patterns.strategy.BlackAndWhiteFilter;
-import com.practice.behaviroal.patterns.strategy.ImageStorage;
-import com.practice.behaviroal.patterns.strategy.JpegCompressor;
-import com.practice.behaviroal.patterns.strategy.PngCompressor;
+import com.practice.behaviroal.patterns.strategy.*;
 import com.practice.behaviroal.patterns.template.TransferMoneyTask;
+import com.practice.behaviroal.patterns.visitor.AnchorNode;
+import com.practice.behaviroal.patterns.visitor.HeadingNode;
+import com.practice.behaviroal.patterns.visitor.HtmlDocument;
+import com.practice.behaviroal.patterns.visitor.PlainTextOperation;
 
 public class Main {
 
     public static void main(String[] args) {
+
+        //region Behavioral Patterns
 
         //region Memento Pattern
         System.out.println("-------------- Memento Pattern Started --------------");
@@ -145,6 +150,76 @@ public class Main {
         dataSource.addObserver(chart);
 
         dataSource.setValue(1);
+
+        //endregion
+
+        //region Visitor Pattern
+        System.out.println("-------------- Visitor Pattern Started --------------");
+        var htmlDocument = new HtmlDocument();
+        htmlDocument.add(new HeadingNode());
+        htmlDocument.add(new AnchorNode());
+        htmlDocument.execute(new PlainTextOperation());
+        //endregion
+
+        //region Chain of Responsibility Pattern
+        System.out.println("-------------- Chain of Responsibility Pattern Started --------------");
+
+        // Build a processing pipeline in order Authenticator -> //Logger -> Compressor -> Encryptor
+        var encryptor = new Encryptor(null);
+        var compressor = new Compressor(encryptor);
+        //var logger = new Logger(compressor);
+        var authenticator = new Authenticator(compressor);
+
+        var webServer = new WebServer(authenticator);
+        webServer.handle(new HttpRequest("admin", "1234"));
+
+        //endregion
+
+        //region Mediator Pattern
+        System.out.println("-------------- Mediator Pattern Started --------------");
+
+
+        //endregion
+
+        //region Command Pattern
+        System.out.println("-------------- Command Pattern Started --------------");
+
+
+        //endregion
+
+        //endregion
+
+        //region Structural Patterns
+
+        //region Composite Pattern
+        System.out.println("-------------- Composite Pattern Started --------------");
+
+
+        //endregion
+
+        //region Facade Pattern
+        System.out.println("-------------- Facade Pattern Started --------------");
+
+
+        //endregion
+
+        //region Flyweight Pattern
+        System.out.println("-------------- Flyweight Pattern Started --------------");
+
+
+        //endregion
+
+        //region Bridge Pattern
+        System.out.println("-------------- Bridge Pattern Started --------------");
+
+
+        //endregion
+
+        //region Proxy Pattern
+        System.out.println("-------------- Proxy Pattern Started --------------");
+
+
+        //endregion
 
         //endregion
     }
