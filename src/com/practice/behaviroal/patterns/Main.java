@@ -2,6 +2,7 @@ package com.practice.behaviroal.patterns;
 
 import com.practice.behaviroal.patterns.chainOfResponsibility.*;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
+import com.practice.behaviroal.patterns.chainOfResponsibility.Exercise.DataReaderFactory;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
@@ -173,6 +174,14 @@ public class Main {
         var webServer = new WebServer(authenticator);
         webServer.handle(new HttpRequest("admin", "1234"));
 
+        //region Chain of Responsibility (Exercise) Pattern
+
+        var reader = DataReaderFactory.getDataReaderChain();
+        reader.read("data.xls");
+        reader.read("data.qbw");
+        reader.read("data.numbers");
+
+        //endregion
         //endregion
 
         //region Mediator Pattern
