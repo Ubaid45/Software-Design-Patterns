@@ -3,6 +3,11 @@ package com.practice.behaviroal.patterns;
 import com.practice.behaviroal.patterns.chainOfResponsibility.*;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Exercise.DataReaderFactory;
+import com.practice.behaviroal.patterns.command.*;
+import com.practice.behaviroal.patterns.command.editor.BoldCommand;
+import com.practice.behaviroal.patterns.command.editor.UndoCommand;
+import com.practice.behaviroal.patterns.command.editor.UndoableCommand;
+import com.practice.behaviroal.patterns.command.fx.Button;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
 import com.practice.behaviroal.patterns.memento.Editor;
@@ -192,6 +197,30 @@ public class Main {
 
         //region Command Pattern
         System.out.println("-------------- Command Pattern Started --------------");
+        var service = new CustomerService();
+        var command = new AddCustomerCommand(service);
+        var button = new Button(command);
+        button.click();
+
+        System.out.println("Print recorded sequence");
+        var composite = new CompositeCommand();
+        composite.add(new ResizeCommand());
+        composite.add(new BlackAndWhiteCommand());
+        composite.execute();
+        composite.execute();
+
+        var editorHistory = new com.practice.behaviroal.patterns.command.editor.History();
+        var editorDocument = new com.practice.behaviroal.patterns.command.editor.HtmlDocument();
+        editorDocument.setContent("Hello World");
+
+        var boldCommand = new BoldCommand(editorDocument, editorHistory);
+        boldCommand.execute();
+        System.out.println("Execute Command: "+editorDocument.getContent());
+        //boldCommand.unexecute();
+        //System.out.println("Unexecute Command: "+editorDocument.getContent());
+        var undoCommand = new UndoCommand(editorHistory);
+        undoCommand.execute();
+        System.out.println("After undo Command: "+editorDocument.getContent());
 
 
         //endregion
