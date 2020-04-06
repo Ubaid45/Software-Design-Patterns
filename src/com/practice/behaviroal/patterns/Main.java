@@ -238,7 +238,7 @@ public class Main {
         wavFile.applyFilter(new NormalizeFilter());
         //endregion
         //endregion
-        
+
         //region Chain of Responsibility Pattern
         System.out.println("-------------- Chain of Responsibility Pattern Started --------------");
 
@@ -252,6 +252,7 @@ public class Main {
         webServer.handle(new HttpRequest("admin", "1234"));
 
         //region Chain of Responsibility (Exercise) Pattern
+        System.out.println("-------------- Chain of Responsibility Pattern (Exercise) Started --------------");
 
         var reader = DataReaderFactory.getDataReaderChain();
         reader.read("data.xls");
