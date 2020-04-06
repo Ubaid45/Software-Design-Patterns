@@ -6,14 +6,13 @@ import com.practice.behaviroal.patterns.chainOfResponsibility.Exercise.DataReade
 import com.practice.behaviroal.patterns.command.*;
 import com.practice.behaviroal.patterns.command.editor.BoldCommand;
 import com.practice.behaviroal.patterns.command.editor.UndoCommand;
-import com.practice.behaviroal.patterns.command.editor.UndoableCommand;
 import com.practice.behaviroal.patterns.command.fx.Button;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
+import com.practice.behaviroal.patterns.mediator.normalWay.ArticlesDialogBox;
 import com.practice.behaviroal.patterns.memento.Editor;
-import com.practice.behaviroal.patterns.memento.Exercise.Document;
-import com.practice.behaviroal.patterns.memento.Exercise.DocumentProcessorHistory;
-import com.practice.behaviroal.patterns.memento.Exercise.DocumentState;
+import com.practice.behaviroal.patterns.memento.exercise.Document;
+import com.practice.behaviroal.patterns.memento.exercise.DocumentProcessorHistory;
 import com.practice.behaviroal.patterns.memento.History;
 import com.practice.behaviroal.patterns.observer.Chart;
 import com.practice.behaviroal.patterns.observer.DataSource;
@@ -21,10 +20,10 @@ import com.practice.behaviroal.patterns.observer.SpreadSheet;
 import com.practice.behaviroal.patterns.state.BrushTool;
 import com.practice.behaviroal.patterns.state.Canvas;
 import com.practice.behaviroal.patterns.state.EraserTool;
-import com.practice.behaviroal.patterns.state.Exercise.Bicycle;
-import com.practice.behaviroal.patterns.state.Exercise.Context;
-import com.practice.behaviroal.patterns.state.Exercise.Driving;
-import com.practice.behaviroal.patterns.state.Exercise.Walking;
+import com.practice.behaviroal.patterns.state.exercise.Bicycle;
+import com.practice.behaviroal.patterns.state.exercise.Context;
+import com.practice.behaviroal.patterns.state.exercise.Driving;
+import com.practice.behaviroal.patterns.state.exercise.Walking;
 import com.practice.behaviroal.patterns.state.SelectionTool;
 import com.practice.behaviroal.patterns.strategy.*;
 import com.practice.behaviroal.patterns.template.TransferMoneyTask;
@@ -191,7 +190,8 @@ public class Main {
 
         //region Mediator Pattern
         System.out.println("-------------- Mediator Pattern Started --------------");
-
+        var dialog = new ArticlesDialogBox();
+        dialog.simulateUserInteraction();
 
         //endregion
 

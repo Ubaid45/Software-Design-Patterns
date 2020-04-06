@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.state.Exercise;
+package com.practice.behaviroal.patterns.state.exercise;
 
 public class Transit implements Travel {
     @Override
