@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.chainOfResponsibility.Exercise;
+package com.practice.behaviroal.patterns.chainOfResponsibility.exercise;
 
 public class QuickbooksReader extends DataReader {
 

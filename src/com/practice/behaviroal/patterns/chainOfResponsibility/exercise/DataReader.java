@@ -1,9 +1,4 @@
-package com.practice.behaviroal.patterns.chainOfResponsibility.Exercise;
-
-import com.practice.behaviroal.patterns.chainOfResponsibility.Handler;
-import com.practice.behaviroal.patterns.chainOfResponsibility.HttpRequest;
-
-import javax.xml.crypto.Data;
+package com.practice.behaviroal.patterns.chainOfResponsibility.exercise;
 
 public abstract class DataReader {
   /*  public void read(String fileName) {

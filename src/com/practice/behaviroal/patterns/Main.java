@@ -2,13 +2,14 @@ package com.practice.behaviroal.patterns;
 
 import com.practice.behaviroal.patterns.chainOfResponsibility.*;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
-import com.practice.behaviroal.patterns.chainOfResponsibility.Exercise.DataReaderFactory;
+import com.practice.behaviroal.patterns.chainOfResponsibility.exercise.DataReaderFactory;
 import com.practice.behaviroal.patterns.command.*;
 import com.practice.behaviroal.patterns.command.editor.BoldCommand;
 import com.practice.behaviroal.patterns.command.editor.UndoCommand;
 import com.practice.behaviroal.patterns.command.fx.Button;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
+import com.practice.behaviroal.patterns.mediator.exercise.solution.SignUpDialogBox;
 import com.practice.behaviroal.patterns.mediator.normalWay.ArticlesDialogBox;
 import com.practice.behaviroal.patterns.memento.Editor;
 import com.practice.behaviroal.patterns.memento.exercise.Document;
@@ -193,6 +194,12 @@ public class Main {
         var dialog = new ArticlesDialogBox();
         dialog.simulateUserInteraction();
 
+        //region Mediator Pattern (Exercise)
+        System.out.println("-------------- Mediator Pattern (Exercise) Started --------------");
+        var signUpDialogBox = new SignUpDialogBox();
+        signUpDialogBox.simulateUserInteraction();
+
+        //endregion
         //endregion
 
         //region Command Pattern
