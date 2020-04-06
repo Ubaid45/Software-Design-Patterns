@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.memento;
+package com.practice.behaviroal.patterns.memento.implementation;
 
 public class Editor {
   private String content;

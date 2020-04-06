@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.memento.exercise;
+package com.practice.behaviroal.patterns.memento.exercise.solution;
 
 public class Document {
     private String content;
@@ -29,6 +29,15 @@ public class Document {
         this.fontSize = fontSize;
     }
 
+    public DocumentState createState(){
+        return new DocumentState(content, fontName, fontSize);
+    }
+
+    public void restoreState(DocumentState state){
+        content = state.getContent();
+        fontName = state.getFontName();
+        fontSize= state.getFontSize();
+    }
     @Override
     public String toString() {
         return "Document{" +

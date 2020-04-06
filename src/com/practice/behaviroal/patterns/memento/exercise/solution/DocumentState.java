@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.memento.exercise;
+package com.practice.behaviroal.patterns.memento.exercise.solution;
 
 public class DocumentState {
     private final String content;
