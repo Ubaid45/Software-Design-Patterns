@@ -6,6 +6,9 @@ import com.practice.behaviroal.patterns.chainOfResponsibility.exercise.DataReade
 import com.practice.behaviroal.patterns.command.*;
 import com.practice.behaviroal.patterns.command.editor.BoldCommand;
 import com.practice.behaviroal.patterns.command.editor.UndoCommand;
+import com.practice.behaviroal.patterns.command.exercise.solution.SetContrastCommand;
+import com.practice.behaviroal.patterns.command.exercise.solution.SetTextCommand;
+import com.practice.behaviroal.patterns.command.exercise.solution.VideoEditor;
 import com.practice.behaviroal.patterns.command.fx.Button;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
@@ -258,7 +261,29 @@ public class Main {
         undoCommand.execute();
         System.out.println("After undo Command: "+editorDocument.getContent());
 
+        //region Command Pattern (Exercise)
+        System.out.println("-------------- Command Pattern (Exercise) Started --------------");
 
+        var videoEditor = new VideoEditor();
+        var commandHistory = new com.practice.behaviroal.patterns.command.exercise.solution.History();
+
+        var setTextCommand = new SetTextCommand("Video Title", videoEditor, commandHistory);
+        setTextCommand.execute();
+        System.out.println("TEXT: " + videoEditor);
+
+        var setContrast = new SetContrastCommand(1, videoEditor, commandHistory);
+        setContrast.execute();
+        System.out.println("CONTRAST: " + videoEditor);
+
+        var undoCommandVideoEditor = new com.practice.behaviroal.patterns.command.exercise.solution.UndoCommand(commandHistory);
+        undoCommandVideoEditor.execute();
+        System.out.println("UNDO: " + videoEditor);
+
+        undoCommandVideoEditor.execute();
+        System.out.println("UNDO: " + videoEditor);
+
+        undoCommandVideoEditor.execute();
+        System.out.println("UNDO: " + videoEditor);
         //endregion
 
         //endregion
