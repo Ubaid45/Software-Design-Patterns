@@ -2,7 +2,7 @@ package com.practice.behaviroal.patterns;
 
 import com.practice.behaviroal.patterns.chainOfResponsibility.*;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
-import com.practice.behaviroal.patterns.chainOfResponsibility.exercise.DataReaderFactory;
+import com.practice.behaviroal.patterns.chainOfResponsibility.exercise.solution.DataReaderFactory;
 import com.practice.behaviroal.patterns.command.*;
 import com.practice.behaviroal.patterns.command.editor.BoldCommand;
 import com.practice.behaviroal.patterns.command.editor.UndoCommand;

@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.chainOfResponsibility.exercise;
+package com.practice.behaviroal.patterns.chainOfResponsibility.exercise.solution;
 
 public class ExcelReader extends DataReader {
 
