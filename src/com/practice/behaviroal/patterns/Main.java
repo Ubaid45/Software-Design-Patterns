@@ -29,6 +29,8 @@ import com.practice.behaviroal.patterns.state.exercise.solution.Driving;
 import com.practice.behaviroal.patterns.state.exercise.solution.Walking;
 import com.practice.behaviroal.patterns.state.SelectionTool;
 import com.practice.behaviroal.patterns.strategy.*;
+import com.practice.behaviroal.patterns.strategy.exercise.solution.ChatClient;
+import com.practice.behaviroal.patterns.strategy.exercise.solution.DES;
 import com.practice.behaviroal.patterns.template.TransferMoneyTask;
 import com.practice.behaviroal.patterns.visitor.AnchorNode;
 import com.practice.behaviroal.patterns.visitor.HeadingNode;
@@ -57,7 +59,7 @@ public class Main {
         editor.restore(history.pop());
         System.out.println(editor.getContent());
 
-        //region Exercise Memento Pattern
+        //region Memento Pattern (Exercise)
         System.out.println("-------------- Memento Pattern (Exercise) Started --------------");
         var documentProcessorHistory = new DocumentProcessorHistory();
         var document = new Document();
@@ -98,7 +100,7 @@ public class Main {
         canvas.mouseDown();
         canvas.mouseUp();
 
-        //region State (Exercise) Pattern
+        //region State Pattern (Exercise)
         System.out.println("-------------- State Pattern (Exercise) Started --------------");
         var context = new Context();
         context.setTravelType(new Driving());
@@ -129,7 +131,7 @@ public class Main {
             iterator.next();
         }
 
-        //region Iterator Pattern
+        //region Iterator Pattern (Exercise)
         System.out.println("-------------- Iterator Pattern (Exercise) Started --------------");
         var collection = new ProductCollection();
         collection.add(new Product(1, "a"));
@@ -150,6 +152,11 @@ public class Main {
         imageStorage.store("a", new JpegCompressor(), new BlackAndWhiteFilter());
         imageStorage.store("b", new PngCompressor(), new BlackAndWhiteFilter());
 
+        //region Strategy Pattern (Exercise)
+        System.out.println("-------------- Strategy Pattern (Exercise) Started --------------");
+        var client = new ChatClient(new DES());
+        client.send("Hello World");
+        //endregion
         //endregion
 
         //region Template Pattern
