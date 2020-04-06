@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.mediator.exercise.problem;
+package com.practice.behaviroal.patterns.mediator.exercise;
 
 public class Button extends UIControl {
     private boolean isEnabled;

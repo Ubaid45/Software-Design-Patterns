@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.mediator.exercise.problem;
+package com.practice.behaviroal.patterns.mediator.exercise;
 
 public class TextBox extends UIControl {
     private String content;
