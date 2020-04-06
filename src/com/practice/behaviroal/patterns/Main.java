@@ -43,6 +43,10 @@ import com.practice.behaviroal.patterns.visitor.AnchorNode;
 import com.practice.behaviroal.patterns.visitor.HeadingNode;
 import com.practice.behaviroal.patterns.visitor.HtmlDocument;
 import com.practice.behaviroal.patterns.visitor.PlainTextOperation;
+import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReductionFilter;
+import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
+import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
+import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
 
 public class Main {
 
@@ -225,8 +229,16 @@ public class Main {
         htmlDocument.add(new HeadingNode());
         htmlDocument.add(new AnchorNode());
         htmlDocument.execute(new PlainTextOperation());
-        //endregion
 
+        //region Visitor Pattern (Exercise)
+        System.out.println("-------------- Visitor Pattern (Exercise) Started --------------");
+        var wavFile = WavFile.read("myfile.wav");
+        wavFile.applyFilter(new NoiseReductionFilter());
+        wavFile.applyFilter(new ReverbFilter());
+        wavFile.applyFilter(new NormalizeFilter());
+        //endregion
+        //endregion
+        
         //region Chain of Responsibility Pattern
         System.out.println("-------------- Chain of Responsibility Pattern Started --------------");
 
