@@ -9,6 +9,8 @@ import com.practice.behaviroal.patterns.command.editor.UndoCommand;
 import com.practice.behaviroal.patterns.command.fx.Button;
 import com.practice.behaviroal.patterns.iterator.BrowseHistory;
 import com.practice.behaviroal.patterns.iterator.Iterator;
+import com.practice.behaviroal.patterns.iterator.exercise.solution.Product;
+import com.practice.behaviroal.patterns.iterator.exercise.solution.ProductCollection;
 import com.practice.behaviroal.patterns.mediator.exercise.solution.SignUpDialogBox;
 import com.practice.behaviroal.patterns.mediator.normalWay.ArticlesDialogBox;
 import com.practice.behaviroal.patterns.memento.Editor;
@@ -127,6 +129,19 @@ public class Main {
             iterator.next();
         }
 
+        //region Iterator Pattern
+        System.out.println("-------------- Iterator Pattern (Exercise) Started --------------");
+        var collection = new ProductCollection();
+        collection.add(new Product(1, "a"));
+        collection.add(new Product(2, "b"));
+        collection.add(new Product(3, "c"));
+
+        var productIterator = collection.createIterator();
+        while (productIterator.hasNext()) {
+            System.out.println(productIterator.current());
+            productIterator.next();
+        }
+        //endregion
         //endregion
 
         //region Strategy Pattern
