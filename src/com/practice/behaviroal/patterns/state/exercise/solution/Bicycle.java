@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.state.exercise;
+package com.practice.behaviroal.patterns.state.exercise.solution;
 
 public class Bicycle implements Travel {
     @Override
