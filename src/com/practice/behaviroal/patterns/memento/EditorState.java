@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns.memento.implementation;
+package com.practice.behaviroal.patterns.memento;
 
 public class EditorState {
   private final String content;
