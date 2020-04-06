@@ -32,6 +32,7 @@ import com.practice.behaviroal.patterns.strategy.*;
 import com.practice.behaviroal.patterns.strategy.exercise.solution.ChatClient;
 import com.practice.behaviroal.patterns.strategy.exercise.solution.DES;
 import com.practice.behaviroal.patterns.template.TransferMoneyTask;
+import com.practice.behaviroal.patterns.template.exercise.solution.ChatWindow;
 import com.practice.behaviroal.patterns.visitor.AnchorNode;
 import com.practice.behaviroal.patterns.visitor.HeadingNode;
 import com.practice.behaviroal.patterns.visitor.HtmlDocument;
@@ -164,6 +165,12 @@ public class Main {
         var task = new TransferMoneyTask();
         task.execute();
 
+        //region Template Pattern (Exercise)
+        System.out.println("-------------- Template Pattern (Exercise) Started --------------");
+        var window = new ChatWindow();
+        window.close();
+
+        //endregion
         //endregion
 
         //region Observer Pattern
