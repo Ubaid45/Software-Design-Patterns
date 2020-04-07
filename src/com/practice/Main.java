@@ -1,4 +1,4 @@
-package com.practice.behaviroal.patterns;
+package com.practice;
 
 import com.practice.behaviroal.patterns.chainOfResponsibility.*;
 import com.practice.behaviroal.patterns.chainOfResponsibility.Compressor;
@@ -47,6 +47,11 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReduction
 import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
+import com.practice.structural.patterns.adapter.CaramelFilter;
+import com.practice.structural.patterns.adapter.Image;
+import com.practice.structural.patterns.adapter.ImageView;
+import com.practice.structural.patterns.adapter.VividFilter;
+import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
 
 public class Main {
 
@@ -328,11 +333,21 @@ public class Main {
         //endregion
 
         //endregion
+        //endregion
 
         //region Structural Patterns
 
         //region Composite Pattern
         System.out.println("-------------- Composite Pattern Started --------------");
+
+
+        //endregion
+
+        //region Adapter Pattern
+        System.out.println("-------------- Adapter Pattern Started --------------");
+
+        var imageView = new ImageView(new Image());
+        imageView.apply(new CaramelFilter(new Caramel()));
 
 
         //endregion
