@@ -50,7 +50,8 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
 import com.practice.structural.patterns.adapter.CaramelFilter;
 import com.practice.structural.patterns.adapter.Image;
 import com.practice.structural.patterns.adapter.ImageView;
-import com.practice.structural.patterns.adapter.VividFilter;
+import com.practice.structural.patterns.adapter.exercise.EmailClient;
+import com.practice.structural.patterns.adapter.exercise.solution.GmailAdapter;
 import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
 
 public class Main {
@@ -349,7 +350,12 @@ public class Main {
         var imageView = new ImageView(new Image());
         imageView.apply(new CaramelFilter(new Caramel()));
 
-
+        //region Adapter (Exercise) Pattern
+        System.out.println("-------------- Adapter Pattern (Exercise) Started --------------");
+        var emailClient = new EmailClient();
+        emailClient.addProvider(new GmailAdapter());
+        emailClient.downloadEmails();
+        //endregion
         //endregion
 
         //region Facade Pattern
