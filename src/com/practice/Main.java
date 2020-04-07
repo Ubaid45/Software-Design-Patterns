@@ -53,6 +53,10 @@ import com.practice.structural.patterns.adapter.ImageView;
 import com.practice.structural.patterns.adapter.exercise.EmailClient;
 import com.practice.structural.patterns.adapter.exercise.solution.GmailAdapter;
 import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
+import com.practice.structural.patterns.composite.Circle;
+import com.practice.structural.patterns.composite.Group;
+import com.practice.structural.patterns.composite.Shape;
+import com.practice.structural.patterns.composite.Square;
 
 public class Main {
 
@@ -341,6 +345,21 @@ public class Main {
         //region Composite Pattern
         System.out.println("-------------- Composite Pattern Started --------------");
 
+        var group1 = new Group();
+        group1.add(new Square()); // square
+        group1.add(new Square()); // square
+
+        var group2 = new Group();
+        group2.add(new Circle()); // square
+        group2.add(new Circle()); // square
+
+        var group = new Group();
+        group.add(group1);
+        group.add(group2);
+        group.render();
+        group.move();
+        //region Composite (Exercise) Pattern
+        System.out.println("-------------- Composite Pattern (Exercise) Started --------------");
 
         //endregion
 
