@@ -64,6 +64,7 @@ import com.practice.structural.patterns.facade.Connection;
 import com.practice.structural.patterns.facade.Message;
 import com.practice.structural.patterns.facade.NotificationServer;
 import com.practice.structural.patterns.facade.NotificationService;
+import com.practice.structural.patterns.facade.exercise.solution.TwitterAPI;
 
 public class Main {
 
@@ -434,6 +435,8 @@ public class Main {
         //region Facade (Exercise) Pattern
         System.out.println("\n-------------- Facade Pattern (Exercise) Started --------------");
 
+        var twitterAPI = new TwitterAPI("appKey", "secret");
+        var tweets = twitterAPI.getRecentTweets();
         //endregion
         //endregion
 
