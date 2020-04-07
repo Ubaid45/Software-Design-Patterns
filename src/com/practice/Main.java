@@ -60,6 +60,10 @@ import com.practice.structural.patterns.composite.Square;
 import com.practice.structural.patterns.composite.exercise.HumanResource;
 import com.practice.structural.patterns.composite.exercise.Team;
 import com.practice.structural.patterns.composite.exercise.Truck;
+import com.practice.structural.patterns.decorator.CloudStream;
+import com.practice.structural.patterns.decorator.CompressedCloudStream;
+import com.practice.structural.patterns.decorator.EncryptedCloudStream;
+import com.practice.structural.patterns.decorator.Stream;
 import com.practice.structural.patterns.facade.Connection;
 import com.practice.structural.patterns.facade.Message;
 import com.practice.structural.patterns.facade.NotificationServer;
@@ -78,6 +82,9 @@ public class Main {
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
 
+    public static void storeCreditCard(Stream stream){
+        stream.write("1234-1234-1234-134");
+    }
     public static void main(String[] args) {
 
         //region Behavioral Patterns
@@ -419,6 +426,8 @@ public class Main {
 
         //region Decorator Pattern
         System.out.println("\n-------------- Decorator Pattern Started --------------");
+
+        storeCreditCard(new EncryptedCloudStream(new CompressedCloudStream(new CloudStream())));
 
         //region Decorator (Exercise) Pattern
         System.out.println("\n-------------- Decorator Pattern (Exercise) Started --------------");
