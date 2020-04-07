@@ -431,7 +431,8 @@ public class Main {
 
         //region Decorator (Exercise) Pattern
         System.out.println("\n-------------- Decorator Pattern (Exercise) Started --------------");
-
+        var codeEditor = new com.practice.structural.patterns.decorator.exercise.solution.Editor();
+        codeEditor.openProject("...");
         //endregion
         //endregion
 
