@@ -73,6 +73,8 @@ import com.practice.structural.patterns.facade.Message;
 import com.practice.structural.patterns.facade.NotificationServer;
 import com.practice.structural.patterns.facade.NotificationService;
 import com.practice.structural.patterns.facade.exercise.solution.TwitterAPI;
+import com.practice.structural.patterns.flyweight.PointIconFactory;
+import com.practice.structural.patterns.flyweight.PointService;
 
 public class Main {
 
@@ -457,6 +459,10 @@ public class Main {
         //region Flyweight Pattern
         System.out.println("\n-------------- Flyweight Pattern Started --------------");
 
+        var pointService = new PointService(new PointIconFactory());
+        for(var point : pointService.getPoints())
+            point.draw();
+
         //region Flyweight (Exercise) Pattern
         System.out.println("\n-------------- Flyweight Pattern (Exercise) Started --------------");
 
@@ -474,10 +480,6 @@ public class Main {
 
         var advancedSamsungRemoteControl = new AdvancedRemoteControl(new SamsungTV());
         advancedSamsungRemoteControl.setChannels(5);
-        //region Bridge (Exercise) Pattern
-        System.out.println("\n-------------- Bridge Pattern (Exercise) Started --------------");
-
-        //endregion
         //endregion
 
         //region Proxy Pattern
