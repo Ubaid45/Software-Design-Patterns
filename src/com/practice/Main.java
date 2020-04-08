@@ -59,7 +59,6 @@ import com.practice.structural.patterns.bridge.SamsungTV;
 import com.practice.structural.patterns.bridge.SonyTV;
 import com.practice.structural.patterns.composite.Circle;
 import com.practice.structural.patterns.composite.Group;
-import com.practice.structural.patterns.composite.Shape;
 import com.practice.structural.patterns.composite.Square;
 import com.practice.structural.patterns.composite.exercise.HumanResource;
 import com.practice.structural.patterns.composite.exercise.Team;
@@ -68,14 +67,13 @@ import com.practice.structural.patterns.decorator.CloudStream;
 import com.practice.structural.patterns.decorator.CompressedCloudStream;
 import com.practice.structural.patterns.decorator.EncryptedCloudStream;
 import com.practice.structural.patterns.decorator.Stream;
-import com.practice.structural.patterns.facade.Connection;
-import com.practice.structural.patterns.facade.Message;
-import com.practice.structural.patterns.facade.NotificationServer;
 import com.practice.structural.patterns.facade.NotificationService;
 import com.practice.structural.patterns.facade.exercise.solution.TwitterAPI;
 import com.practice.structural.patterns.flyweight.PointIconFactory;
 import com.practice.structural.patterns.flyweight.PointService;
 import com.practice.structural.patterns.flyweight.exercise.solution.CellContextFactory;
+import com.practice.structural.patterns.proxy.Library;
+import com.practice.structural.patterns.proxy.LoggingEbookProxy;
 
 public class Main {
 
@@ -492,6 +490,14 @@ public class Main {
 
         //region Proxy Pattern
         System.out.println("\n-------------- Proxy Pattern Started --------------");
+
+        var library = new Library();
+        String[] fileNames = {"a", "b", "c"};
+        for (var fileName : fileNames)
+            library.add(new LoggingEbookProxy(fileName));
+
+        library.openEbook("a");
+        library.openEbook("b");
 
         //region Proxy (Exercise) Pattern
         System.out.println("\n-------------- Proxy Pattern (Exercise) Started --------------");
