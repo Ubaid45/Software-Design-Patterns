@@ -75,6 +75,7 @@ import com.practice.structural.patterns.facade.NotificationService;
 import com.practice.structural.patterns.facade.exercise.solution.TwitterAPI;
 import com.practice.structural.patterns.flyweight.PointIconFactory;
 import com.practice.structural.patterns.flyweight.PointService;
+import com.practice.structural.patterns.flyweight.exercise.solution.CellContextFactory;
 
 public class Main {
 
@@ -465,6 +466,13 @@ public class Main {
 
         //region Flyweight (Exercise) Pattern
         System.out.println("\n-------------- Flyweight Pattern (Exercise) Started --------------");
+
+        var contextFactory = new CellContextFactory();
+        var sheet = new com.practice.structural.patterns.flyweight.exercise.solution.SpreadSheet(contextFactory);
+        sheet.setContent(0, 0, "Hello");
+        sheet.setContent(1, 0, "World");
+        sheet.setFontFamily(0, 0, "Arial");
+        sheet.render();
 
         //endregion
 
