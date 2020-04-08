@@ -53,6 +53,10 @@ import com.practice.structural.patterns.adapter.ImageView;
 import com.practice.structural.patterns.adapter.exercise.EmailClient;
 import com.practice.structural.patterns.adapter.exercise.solution.GmailAdapter;
 import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
+import com.practice.structural.patterns.bridge.AdvancedRemoteControl;
+import com.practice.structural.patterns.bridge.RemoteControl;
+import com.practice.structural.patterns.bridge.SamsungTV;
+import com.practice.structural.patterns.bridge.SonyTV;
 import com.practice.structural.patterns.composite.Circle;
 import com.practice.structural.patterns.composite.Group;
 import com.practice.structural.patterns.composite.Shape;
@@ -463,6 +467,13 @@ public class Main {
         //region Bridge Pattern
         System.out.println("\n-------------- Bridge Pattern Started --------------");
 
+        var remoteControl = new RemoteControl(new SonyTV());
+        remoteControl.turnOn();
+        var advancedRemoteControl = new AdvancedRemoteControl(new SonyTV());
+        advancedRemoteControl.setChannels(5);
+
+        var advancedSamsungRemoteControl = new AdvancedRemoteControl(new SamsungTV());
+        advancedSamsungRemoteControl.setChannels(5);
         //region Bridge (Exercise) Pattern
         System.out.println("\n-------------- Bridge Pattern (Exercise) Started --------------");
 
