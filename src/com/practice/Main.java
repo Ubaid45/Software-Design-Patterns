@@ -74,6 +74,7 @@ import com.practice.structural.patterns.flyweight.PointService;
 import com.practice.structural.patterns.flyweight.exercise.solution.CellContextFactory;
 import com.practice.structural.patterns.proxy.Library;
 import com.practice.structural.patterns.proxy.LoggingEbookProxy;
+import com.practice.structural.patterns.proxy.exercise.solution.DbContext;
 
 public class Main {
 
@@ -503,6 +504,14 @@ public class Main {
         System.out.println("\n-------------- Proxy Pattern (Exercise) Started --------------");
 
         //endregion
+
+        var dbContext = new DbContext();
+        var product = dbContext.getProduct(1);
+        product.setName("Updated Name");
+        dbContext.saveChanges();
+
+        product.setName("Another name");
+        dbContext.saveChanges();
 
         //endregion
 
