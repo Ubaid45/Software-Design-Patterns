@@ -16,4 +16,4 @@ public class PointService {
         points.add(point);
         return points;
     }
-}
+}git push origin
