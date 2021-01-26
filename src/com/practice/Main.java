@@ -93,6 +93,16 @@ public class Main {
     }
     public static void main(String[] args) {
 
+        //region Creational Patterns
+
+        System.out.println(ANSI_RED + "\n******** CREATIONAL PATTERNS ******\n"+ ANSI_RESET);
+
+        //region Singleton Pattern
+        System.out.println("-------------- Singleton Pattern Started --------------");
+
+        //endregion
+        //endregion
+
         //region Behavioral Patterns
 
         System.out.println(ANSI_RED + "\n******** BEHAVIORAL PATTERNS ******\n"+ ANSI_RESET);
