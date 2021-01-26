@@ -47,6 +47,7 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReduction
 import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
+import com.practice.creational.patterns.singleton.DbSingleton;
 import com.practice.structural.patterns.adapter.CaramelFilter;
 import com.practice.structural.patterns.adapter.Image;
 import com.practice.structural.patterns.adapter.ImageView;
@@ -100,10 +101,16 @@ public class Main {
         //region Singleton Pattern
         System.out.println("-------------- Singleton Pattern Started --------------");
 
+        DbSingleton instance = DbSingleton.getInstance();
+        System.out.println(instance);
+
+        DbSingleton anotherInstance = DbSingleton.getInstance();
+        System.out.println(anotherInstance);
+
         //endregion
         //endregion
 
-        //region Behavioral Patterns
+        /*//region Behavioral Patterns
 
         System.out.println(ANSI_RED + "\n******** BEHAVIORAL PATTERNS ******\n"+ ANSI_RESET);
 
@@ -525,6 +532,6 @@ public class Main {
 
         //endregion
 
-        //endregion
+        //endregion*/
     }
 }
