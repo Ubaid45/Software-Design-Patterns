@@ -17,9 +17,9 @@ import com.practice.behaviroal.patterns.iterator.exercise.solution.ProductCollec
 import com.practice.behaviroal.patterns.mediator.exercise.solution.SignUpDialogBox;
 import com.practice.behaviroal.patterns.mediator.normalWay.ArticlesDialogBox;
 import com.practice.behaviroal.patterns.memento.Editor;
+import com.practice.behaviroal.patterns.memento.History;
 import com.practice.behaviroal.patterns.memento.exercise.solution.Document;
 import com.practice.behaviroal.patterns.memento.exercise.solution.DocumentProcessorHistory;
-import com.practice.behaviroal.patterns.memento.History;
 import com.practice.behaviroal.patterns.observer.Chart;
 import com.practice.behaviroal.patterns.observer.DataSource;
 import com.practice.behaviroal.patterns.observer.SpreadSheet;
@@ -29,11 +29,11 @@ import com.practice.behaviroal.patterns.observer.exercise.solution.StockListView
 import com.practice.behaviroal.patterns.state.BrushTool;
 import com.practice.behaviroal.patterns.state.Canvas;
 import com.practice.behaviroal.patterns.state.EraserTool;
+import com.practice.behaviroal.patterns.state.SelectionTool;
 import com.practice.behaviroal.patterns.state.exercise.solution.Bicycle;
 import com.practice.behaviroal.patterns.state.exercise.solution.Context;
 import com.practice.behaviroal.patterns.state.exercise.solution.Driving;
 import com.practice.behaviroal.patterns.state.exercise.solution.Walking;
-import com.practice.behaviroal.patterns.state.SelectionTool;
 import com.practice.behaviroal.patterns.strategy.*;
 import com.practice.behaviroal.patterns.strategy.exercise.solution.ChatClient;
 import com.practice.behaviroal.patterns.strategy.exercise.solution.DES;
@@ -76,6 +76,12 @@ import com.practice.structural.patterns.flyweight.exercise.solution.CellContextF
 import com.practice.structural.patterns.proxy.Library;
 import com.practice.structural.patterns.proxy.LoggingEbookProxy;
 import com.practice.structural.patterns.proxy.exercise.solution.DbContext;
+import main.java.com.practice.creational.patterns.singleton.DbSingletonDemo;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Main {
 
@@ -102,15 +108,36 @@ public class Main {
         System.out.println("-------------- Singleton Pattern Started --------------");
 
         DbSingleton instance = DbSingleton.getInstance();
-        System.out.println(instance);
+        DbSingletonDemo facadeSingleton = new DbSingletonDemo();
 
-        DbSingleton anotherInstance = DbSingleton.getInstance();
-        System.out.println(anotherInstance);
+        long timeBefore = 0;
+        long timeAfter = 0;
+
+        timeBefore = System.currentTimeMillis();
+        Connection conn = instance.getConnection();
+        timeAfter = System.currentTimeMillis();
+
+        System.out.println("Creating instance first time takes: " + (timeAfter - timeBefore) + " seconds");
+
+        facadeSingleton.CreateTable(conn);
+
+        timeBefore = System.currentTimeMillis();
+        timeAfter = System.currentTimeMillis();
+
+        System.out.println("Creating/Getting instance next time takes: " + (timeAfter - timeBefore) + " seconds");
+
+
+        facadeSingleton.SelectTable(conn);
+
+        timeBefore = System.currentTimeMillis();
+        timeAfter = System.currentTimeMillis();
+
+        System.out.println("Creating/Getting instance next time takes: " + (timeAfter - timeBefore) + " seconds");
 
         //endregion
         //endregion
 
-        /*//region Behavioral Patterns
+        //region Behavioral Patterns
 
         System.out.println(ANSI_RED + "\n******** BEHAVIORAL PATTERNS ******\n"+ ANSI_RESET);
 
@@ -532,6 +559,6 @@ public class Main {
 
         //endregion
 
-        //endregion*/
+        //endregion
     }
 }
