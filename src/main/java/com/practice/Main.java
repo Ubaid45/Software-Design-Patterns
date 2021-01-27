@@ -76,6 +76,7 @@ import com.practice.structural.patterns.flyweight.exercise.solution.CellContextF
 import com.practice.structural.patterns.proxy.Library;
 import com.practice.structural.patterns.proxy.LoggingEbookProxy;
 import com.practice.structural.patterns.proxy.exercise.solution.DbContext;
+import main.java.com.practice.creational.patterns.builder.LunchOrder;
 import main.java.com.practice.creational.patterns.singleton.DbSingletonDemo;
 
 import java.sql.Connection;
@@ -135,6 +136,22 @@ public class Main {
         System.out.println("Creating/Getting instance next time takes: " + (timeAfter - timeBefore) + " seconds");
 
         //endregion
+
+        //region Builder Pattern
+        System.out.println("\n-------------- Builder Pattern Started --------------");
+        LunchOrder.Builder builder = new LunchOrder.Builder();
+
+        builder.bread("Wheat").condiments("Ketchup").dressing("Mayo").meat("Turkey");
+
+        LunchOrder lunchOrder = builder.build();
+
+        System.out.println(lunchOrder.getBread());
+        System.out.println(lunchOrder.getCondiments());
+        System.out.println(lunchOrder.getDressing());
+        System.out.println(lunchOrder.getMeat());
+
+        //endregion
+
         //endregion
 
         //region Behavioral Patterns
