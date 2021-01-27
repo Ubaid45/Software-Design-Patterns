@@ -76,13 +76,10 @@ import com.practice.structural.patterns.flyweight.exercise.solution.CellContextF
 import com.practice.structural.patterns.proxy.Library;
 import com.practice.structural.patterns.proxy.LoggingEbookProxy;
 import com.practice.structural.patterns.proxy.exercise.solution.DbContext;
-import main.java.com.practice.creational.patterns.builder.LunchOrder;
-import main.java.com.practice.creational.patterns.singleton.DbSingletonDemo;
+import com.practice.creational.patterns.builder.LunchOrder;
+import com.practice.creational.patterns.singleton.DbSingletonDemo;
 
 import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 public class Main {
 

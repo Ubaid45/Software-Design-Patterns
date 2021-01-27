@@ -22,7 +22,7 @@ public class Stock {
     }
 
     public void notifyObservers() {
-        for (var observer : observers)
+        for (Observer observer : observers)
             observer.priceChanged();
     }
 

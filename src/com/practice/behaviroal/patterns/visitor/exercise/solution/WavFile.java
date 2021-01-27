@@ -8,7 +8,7 @@ public class WavFile {
 
     public static WavFile read(String fileName) {
         // Simulate reading a wav file and building the segments
-        var wavFile = new WavFile();
+        WavFile wavFile = new WavFile();
         wavFile.segments.add(new FormatSegment());
         wavFile.segments.add(new FactSegment());
         wavFile.segments.add(new FactSegment());
@@ -18,7 +18,7 @@ public class WavFile {
     }
 
     public void applyFilter(AudioFilter filter) {
-        for (var segment : segments)
+        for (Segment segment : segments)
             segment.applyFilter(filter);
     }
 }

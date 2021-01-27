@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Wed Jan 27 23:49:35 CET 2021:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.11.1.1 - (1616546): instance a816c00e-0177-4609-ac4f-00000776ee88 
+on database directory memory:/Users/office/Desktop/Learning/Software-Design-Patterns/codejava/webdb with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@512ddf17 
+Loaded from file:/Users/office/Desktop/Learning/Software-Design-Patterns/src/com/practice/creational/patterns/singleton/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=11.0.1+13
+user.dir=/Users/office/Desktop/Learning/Software-Design-Patterns
+os.name=Mac OS X
+os.arch=x86_64
+os.version=10.15.4
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''

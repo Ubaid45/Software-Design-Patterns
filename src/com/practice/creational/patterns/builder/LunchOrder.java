@@ -1,4 +1,4 @@
-package main.java.com.practice.creational.patterns.builder;
+package com.practice.creational.patterns.builder;
 
 public class LunchOrder {
 

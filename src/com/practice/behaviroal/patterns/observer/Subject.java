@@ -16,7 +16,7 @@ public class Subject {
   }
 
   public void notifyObservers() {
-    for (var observer : observers)
+    for (Observer observer : observers)
       observer.update();
   }
 }

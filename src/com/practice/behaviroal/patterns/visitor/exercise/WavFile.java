@@ -8,7 +8,7 @@ public class WavFile {
 
     public static WavFile read(String fileName) {
         // Simulate reading a wav file and building the segments
-        var wavFile = new WavFile();
+        WavFile wavFile = new WavFile();
         wavFile.segments.add(new FormatSegment());
         wavFile.segments.add(new FactSegment());
         wavFile.segments.add(new FactSegment());
@@ -18,17 +18,17 @@ public class WavFile {
     }
 
     public void reduceNoise() {
-        for (var segment : segments)
+        for (Segment segment : segments)
             segment.reduceNoise();
     }
 
     public void addReverb() {
-        for (var segment : segments)
+        for (Segment segment : segments)
             segment.addReverb();
     }
 
     public void normalize() {
-        for (var segment : segments)
+        for (Segment segment : segments)
             segment.normalize();
     }
 }

@@ -13,7 +13,7 @@ public class StockListView implements Observer {
 
     public void show() {
         System.out.println("Stock List View");
-        for (var stock : stocks)
+        for (Stock stock : stocks)
             System.out.println(stock);
     }
 

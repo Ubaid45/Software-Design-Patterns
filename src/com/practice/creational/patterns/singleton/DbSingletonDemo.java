@@ -1,4 +1,4 @@
-package main.java.com.practice.creational.patterns.singleton;
+package com.practice.creational.patterns.singleton;
 
 
 import java.sql.Connection;

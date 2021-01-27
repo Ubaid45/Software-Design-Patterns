@@ -13,7 +13,7 @@ public class StatusBar implements Observer {
 
     public void show() {
         System.out.println("Status Bar");
-        for (var stock : stocks)
+        for (Stock stock : stocks)
             System.out.println(stock);
     }
 

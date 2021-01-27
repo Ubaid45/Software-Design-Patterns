@@ -11,7 +11,7 @@ public class StatusBar {
     }
 
     public void show() {
-        for (var stock : stocks)
+        for (Stock stock : stocks)
             System.out.println(stock);
     }
 }

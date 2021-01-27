@@ -11,7 +11,7 @@ public class HtmlDocument {
   }
 
   public void execute(Operation operation) {
-    for (var node : nodes)
+    for (HtmlNode node : nodes)
       node.execute(operation);
   }
 }
