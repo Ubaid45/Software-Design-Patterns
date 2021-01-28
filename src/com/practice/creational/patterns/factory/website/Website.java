@@ -1,4 +1,4 @@
-package com.practice.creational.patterns.factory;
+package com.practice.creational.patterns.factory.website;
 
 import java.util.ArrayList;
 import java.util.List;

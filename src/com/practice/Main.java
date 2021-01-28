@@ -47,9 +47,12 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReduction
 import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
-import com.practice.creational.patterns.factory.Website;
-import com.practice.creational.patterns.factory.WebsiteFactory;
-import com.practice.creational.patterns.factory.WebsiteType;
+import com.practice.creational.patterns.factory.dressing.BasicDressing;
+import com.practice.creational.patterns.factory.dressing.DressingType;
+import com.practice.creational.patterns.factory.dressing.DressingFactory;
+import com.practice.creational.patterns.factory.website.Website;
+import com.practice.creational.patterns.factory.website.WebsiteFactory;
+import com.practice.creational.patterns.factory.website.WebsiteType;
 import com.practice.creational.patterns.prototype.Movie;
 import com.practice.creational.patterns.prototype.PrototypeEverydayDemo;
 import com.practice.creational.patterns.prototype.Registry;
@@ -200,6 +203,19 @@ public class Main {
         site = WebsiteFactory.getWebsite(WebsiteType.SHOP);
 
         System.out.println(site.getPages());
+
+        System.out.println(ANSI_YELLOW + "Our own Dressing factory"+ ANSI_RESET);
+
+        BasicDressing dressing = new DressingFactory();
+        System.out.println(ANSI_PURPLE +"Combo dressing: "+ ANSI_RESET);
+        dressing.createDressing(DressingType.Combo);
+
+        System.out.println(ANSI_PURPLE +"Formal dressing: "+ ANSI_RESET);
+        dressing.createDressing(DressingType.Formal);
+
+        System.out.println(ANSI_PURPLE +"Casual dressing: "+ ANSI_RESET);
+        dressing.createDressing(DressingType.Casual);
+
         //endregion
 
         //region Behavioral Patterns

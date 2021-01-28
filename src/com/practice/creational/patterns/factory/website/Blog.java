@@ -1,4 +1,4 @@
-package com.practice.creational.patterns.factory;
+package com.practice.creational.patterns.factory.website;
 
 public class Blog extends Website {
 
