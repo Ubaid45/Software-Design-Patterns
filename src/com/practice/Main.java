@@ -47,6 +47,9 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReduction
 import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
+import com.practice.creational.patterns.factory.Website;
+import com.practice.creational.patterns.factory.WebsiteFactory;
+import com.practice.creational.patterns.factory.WebsiteType;
 import com.practice.creational.patterns.prototype.Movie;
 import com.practice.creational.patterns.prototype.PrototypeEverydayDemo;
 import com.practice.creational.patterns.prototype.Registry;
@@ -84,6 +87,7 @@ import com.practice.creational.patterns.builder.LunchOrder;
 import com.practice.creational.patterns.singleton.DbSingletonDemo;
 
 import java.sql.Connection;
+import java.util.Calendar;
 
 public class Main {
 
@@ -178,8 +182,24 @@ public class Main {
         anotherMovie.setTitle("Gang of Four");
         System.out.println(anotherMovie + ", " + anotherMovie.getRuntime() + "," + anotherMovie.getTitle());
 
-
         //endregion
+
+        //region Factory Pattern
+        System.out.println(ANSI_GREEN + "\n-------------- Factory Pattern Started --------------"+ ANSI_RESET);
+        System.out.println(ANSI_YELLOW + "Calender factory"+ ANSI_RESET);
+        Calendar cal = Calendar.getInstance();
+        System.out.println(cal);
+        System.out.println(cal.get(Calendar.DAY_OF_MONTH));
+
+        System.out.println(ANSI_YELLOW + "Our own website factory"+ ANSI_RESET);
+
+        Website site = WebsiteFactory.getWebsite(WebsiteType.BLOG);
+
+        System.out.println(site.getPages());
+
+        site = WebsiteFactory.getWebsite(WebsiteType.SHOP);
+
+        System.out.println(site.getPages());
         //endregion
 
         //region Behavioral Patterns
