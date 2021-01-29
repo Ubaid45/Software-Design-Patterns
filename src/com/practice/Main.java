@@ -47,6 +47,9 @@ import com.practice.behaviroal.patterns.visitor.exercise.solution.NoiseReduction
 import com.practice.behaviroal.patterns.visitor.exercise.solution.NormalizeFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.ReverbFilter;
 import com.practice.behaviroal.patterns.visitor.exercise.solution.WavFile;
+import com.practice.creational.patterns.abstract_factory.CardType;
+import com.practice.creational.patterns.abstract_factory.CreditCard;
+import com.practice.creational.patterns.abstract_factory.CreditCardFactory;
 import com.practice.creational.patterns.factory.dressing.BasicDressing;
 import com.practice.creational.patterns.factory.dressing.DressingType;
 import com.practice.creational.patterns.factory.dressing.DressingFactory;
@@ -215,6 +218,25 @@ public class Main {
 
         System.out.println(ANSI_PURPLE +"Casual dressing: "+ ANSI_RESET);
         dressing.createDressing(DressingType.Casual);
+
+        //endregion
+
+        //region Abstract Factory Pattern
+        System.out.println(ANSI_GREEN + "\n-------------- Abstract Factory Pattern Started --------------"+ ANSI_RESET);
+
+        CreditCardFactory abstractFactory = CreditCardFactory.getCreditCardFactory(775);
+
+        CreditCard card = abstractFactory.getCreditCard(CardType.PLATINUM);
+
+        System.out.println(card.getClass());
+
+        abstractFactory = CreditCardFactory.getCreditCardFactory(600);
+
+        CreditCard card2 = abstractFactory.getCreditCard(CardType.GOLD);
+
+        System.out.println(card2.getClass());
+
+        //endregion
 
         //endregion
 
