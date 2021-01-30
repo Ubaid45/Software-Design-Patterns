@@ -61,12 +61,14 @@ import com.practice.creational.patterns.prototype.PrototypeEverydayDemo;
 import com.practice.creational.patterns.prototype.Registry;
 import com.practice.creational.patterns.prototype.Statements;
 import com.practice.creational.patterns.singleton.DbSingleton;
-import com.practice.structural.patterns.adapter.CaramelFilter;
-import com.practice.structural.patterns.adapter.Image;
-import com.practice.structural.patterns.adapter.ImageView;
+import com.practice.structural.patterns.adapter.employee.Employee;
+import com.practice.structural.patterns.adapter.employee.EmployeeClient;
+import com.practice.structural.patterns.adapter.filters.CaramelFilter;
+import com.practice.structural.patterns.adapter.filters.Image;
+import com.practice.structural.patterns.adapter.filters.ImageView;
 import com.practice.structural.patterns.adapter.exercise.EmailClient;
 import com.practice.structural.patterns.adapter.exercise.solution.GmailAdapter;
-import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
+import com.practice.structural.patterns.adapter.filters.thirdPartyFilters.Caramel;
 import com.practice.structural.patterns.bridge.AdvancedRemoteControl;
 import com.practice.structural.patterns.bridge.RemoteControl;
 import com.practice.structural.patterns.bridge.SamsungTV;
@@ -94,6 +96,7 @@ import com.practice.creational.patterns.singleton.DbSingletonDemo;
 
 import java.sql.Connection;
 import java.util.Calendar;
+import java.util.List;
 
 public class Main {
 
@@ -566,8 +569,18 @@ public class Main {
         //region Adapter Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Adapter Pattern Started --------------"+ ANSI_RESET);
 
+        System.out.println(ANSI_YELLOW + "\n-------------- Adapter Pattern (Mosh) --------------"+ ANSI_RESET);
+
         var imageView = new ImageView(new Image());
         imageView.apply(new CaramelFilter(new Caramel()));
+
+        System.out.println(ANSI_YELLOW + "\n-------------- Adapter Pattern (Bryan) --------------"+ ANSI_RESET);
+
+        EmployeeClient employeeClient = new EmployeeClient();
+
+        List<Employee> employees = employeeClient.getEmployeeList();
+
+        System.out.println(employees);
 
         //region Adapter (Exercise) Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Adapter Pattern (Exercise) Started --------------"+ ANSI_RESET);

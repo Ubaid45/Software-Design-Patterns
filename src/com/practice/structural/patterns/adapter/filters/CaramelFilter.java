@@ -1,6 +1,6 @@
-package com.practice.structural.patterns.adapter;
+package com.practice.structural.patterns.adapter.filters;
 
-import com.practice.structural.patterns.adapter.thirdPartyFilters.Caramel;
+import com.practice.structural.patterns.adapter.filters.thirdPartyFilters.Caramel;
 
 public class CaramelFilter implements Filter {
     private Caramel caramel;

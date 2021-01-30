@@ -1,4 +1,4 @@
-package com.practice.structural.patterns.adapter;
+package com.practice.structural.patterns.adapter.filters;
 
 public class VividFilter implements Filter {
     @Override
