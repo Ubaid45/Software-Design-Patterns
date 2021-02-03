@@ -79,10 +79,13 @@ import com.practice.structural.patterns.composite.Square;
 import com.practice.structural.patterns.composite.exercise.HumanResource;
 import com.practice.structural.patterns.composite.exercise.Team;
 import com.practice.structural.patterns.composite.exercise.Truck;
-import com.practice.structural.patterns.decorator.CloudStream;
-import com.practice.structural.patterns.decorator.CompressedCloudStream;
-import com.practice.structural.patterns.decorator.EncryptedCloudStream;
-import com.practice.structural.patterns.decorator.Stream;
+import com.practice.structural.patterns.decorator.sandwich.DressingDecorator;
+import com.practice.structural.patterns.decorator.sandwich.MeatDecorator;
+import com.practice.structural.patterns.decorator.sandwich.SimpleSandwich;
+import com.practice.structural.patterns.decorator.streams.CloudStream;
+import com.practice.structural.patterns.decorator.streams.CompressedCloudStream;
+import com.practice.structural.patterns.decorator.streams.EncryptedCloudStream;
+import com.practice.structural.patterns.decorator.streams.Stream;
 import com.practice.structural.patterns.facade.NotificationService;
 import com.practice.structural.patterns.facade.exercise.solution.TwitterAPI;
 import com.practice.structural.patterns.flyweight.PointIconFactory;
@@ -593,14 +596,24 @@ public class Main {
         //region Decorator Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Decorator Pattern Started --------------"+ ANSI_RESET);
 
+        System.out.println(ANSI_YELLOW + "\n-------------- Decorator Pattern (Mosh) --------------"+ ANSI_RESET);
+
         storeCreditCard(new EncryptedCloudStream(new CompressedCloudStream(new CloudStream())));
+
+        System.out.println(ANSI_YELLOW + "\n-------------- Decorator Pattern (Bryan) --------------"+ ANSI_RESET);
+
+        var sandwich = new MeatDecorator(new DressingDecorator(new SimpleSandwich()));
+        System.out.println(sandwich.make());
 
         //region Decorator (Exercise) Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Decorator Pattern (Exercise) Started --------------"+ ANSI_RESET);
-        var codeEditor = new com.practice.structural.patterns.decorator.exercise.solution.Editor();
+        var codeEditor = new com.practice.structural.patterns.decorator.streams.exercise.solution.Editor();
         codeEditor.openProject("...");
         //endregion
+
         //endregion
+
+        //renaming, variable extraction, method extration, move variable, move method, change signature variable and methid.
 
         //region Facade Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Facade Pattern Started --------------"+ ANSI_RESET);

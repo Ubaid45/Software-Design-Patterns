@@ -1,4 +1,4 @@
-package com.practice.structural.patterns.decorator;
+package com.practice.structural.patterns.decorator.streams;
 
 public class EncryptedCloudStream implements Stream{
     private Stream stream;
