@@ -1,4 +1,4 @@
-package com.practice.structural.patterns.decorator.streams.exercise.solution;
+package com.practice.structural.patterns.decorator.exercise.solution;
 
 public class MainDecorator implements AbstractArtefact {
     private AbstractArtefact artefact;

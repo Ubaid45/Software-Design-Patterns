@@ -607,7 +607,7 @@ public class Main {
 
         //region Decorator (Exercise) Pattern
         System.out.println(ANSI_GREEN + "\n-------------- Decorator Pattern (Exercise) Started --------------"+ ANSI_RESET);
-        var codeEditor = new com.practice.structural.patterns.decorator.streams.exercise.solution.Editor();
+        var codeEditor = new com.practice.structural.patterns.decorator.exercise.solution.Editor();
         codeEditor.openProject("...");
         //endregion
 

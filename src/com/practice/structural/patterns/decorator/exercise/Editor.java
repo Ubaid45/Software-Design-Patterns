@@ -1,4 +1,4 @@
-package com.practice.structural.patterns.decorator.streams.exercise;
+package com.practice.structural.patterns.decorator.exercise;
 
 public class Editor {
     public void openProject(String path) {
